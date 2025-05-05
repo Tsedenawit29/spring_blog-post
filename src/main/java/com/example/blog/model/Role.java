@@ -1,10 +1,8 @@
-package com.example.blog;
+package com.example.blog.model;
 
 import jakarta.persistence.*;
-import lombok.Generated;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.extern.java.Log;
 
 @Entity
 @Table(name="role")

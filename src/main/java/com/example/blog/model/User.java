@@ -1,11 +1,11 @@
-package com.example.blog;
+package com.example.blog.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import java.util.stream.Collectors;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -19,7 +19,7 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(unique = true, nullable = false)
-    private String email;
+    private String username;
     @Column(nullable = false)
     private String password;
     @ManyToMany(fetch = FetchType.EAGER)
@@ -45,7 +45,7 @@ public class User implements UserDetails {
 
     @Override
     public String getUsername() {
-        return email;
+        return username;
     }
 
     @Override
